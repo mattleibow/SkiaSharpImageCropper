@@ -1,0 +1,27 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="ImageCropper.MainPage"
+             Title="CROP">
+
+    <StackLayout>
+        <Button Text="PICK IMAGE" Clicked="OnPickImage" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Tap/drag on the image to create the crop polygon:" 
+                   HorizontalOptions="StartAndExpand" />
+            <Button Text="CLEAR" Clicked="OnClear" />
+        </StackLayout>
+
+        <skia:SKCanvasView x:Name="skiaView"
+                           PaintSurface="OnPaintSurafce"
+                           EnableTouchEvents="True" Touch="OnTouchSurface"
+                           VerticalOptions="FillAndExpand" />
+
+        <Button Text="CROP IMAGE" Clicked="OnCropImage" />
+    </StackLayout>
+
+</ContentPage>
